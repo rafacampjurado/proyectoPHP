@@ -1,2 +1,0 @@
-* falta añadir más info en detalles.php
-* ya está creado el objeto de productos
