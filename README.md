@@ -1,4 +1,5 @@
 # Proyecto PHP
+<img src"img/logo.png">
 ## FoodNation
 Mi proyecto tratará sobre una tienda alimenticia desde la que podrás realizar las siguientes funciones : 
 ### Funciones
