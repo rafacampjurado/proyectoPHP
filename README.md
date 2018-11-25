@@ -8,4 +8,4 @@ Mi proyecto tratará sobre una tienda alimenticia desde la que podrás realizar 
 - Realizar compras de los productos.
 - Ver recetas posibles recetas.
 ### Modelo E/R
-![Modelo E/R](/img/modeloER.png)
+<img src="img/modeloER.png">
