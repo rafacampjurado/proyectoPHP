@@ -11,7 +11,7 @@ Mi proyecto tratará sobre una tienda alimenticia desde la que podrás realizar 
 - Realizar compras de los productos.
 - Ver recetas posibles recetas.
 ### Modelo E/R
-<img src="img/modeloER.png">
+<img src="img/ER.png">
 
 ### Credenciales y acceso a la web
 Enlace a la página web: <http://foodnation.epizy.com/>
