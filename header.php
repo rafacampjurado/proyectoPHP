@@ -118,7 +118,8 @@
                                 <!---------------------------- Fin Productos comprados------------------------->
                                 <div class="shopping-cart-btns">
                                     <a href="verCarrito.php"<button class="main-btn">Ver carrito</button></a>
-                                    <a href="BBDD/carrito.php?accion=test"<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button></a>
+<!--                                    <a href="BBDD/carrito.php?accion=test"<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button></a>-->
+                                    <a href="BBDD/finCompra.php"<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button></a>
                                 </div>
                             </div>
                         </div>

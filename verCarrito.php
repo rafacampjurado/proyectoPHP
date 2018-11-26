@@ -7,6 +7,9 @@ session_start();
 //print_r($producto);
 $idUsuario = $_SESSION['idUsuario'];
 $finalizar = $_GET["fin"];
+if (isset($_GET['error'])) {
+    $error = '<div class="alert alert-danger" role="alert">Error</div>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,43 +74,46 @@ $finalizar = $_GET["fin"];
                     <div id="listado"class="col-md-9">
                         <!--  Product Details -->
                         <?php
-                        if (!empty($_SESSION['carrito']) || isset($finalizar)) {
-
-
-                            if ($finalizar == "fin") {
-                                ?>
-                                <div class="alert alert-success" role="alert">
-                                    Se ha realizado correctamente la compra.
-                                </div>
-                                <?php
+                        if (!empty($_SESSION['carrito']) || isset($finalizar) || isset($error)) {
+                            if (isset($error)) {
+                                echo $error;
                             } else {
-                                ?>
-                                <div class="h1 text-center">
-                                    Listado de productos
-                                </div>
-                                <table class="table">
-                                    <tr>
-                                        <th scope="col">Imagen</th>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col"></th>
-                                        
-                                    </tr>
+
+                                if ($finalizar == "fin") {
+                                    ?>
+                                    <div class="alert alert-success" role="alert">
+                                        Se ha realizado correctamente la compra.
+                                    </div>
                                     <?php
-                                    echo pintarListaCarrito();
+                                } else {
+                                    ?>
+                                    <div class="h1 text-center">
+                                        Listado de productos
+                                    </div>
+                                    <table class="table">
+                                        <tr>
+                                            <th scope="col">Imagen</th>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col"></th>
+
+                                        </tr>
+                                        <?php
+                                        echo pintarListaCarrito();
+                                    }
+                                    ?>
+                                </table>
+                                <?php if (!isset($finalizar)) { ?>
+                                    <a href="BBDD/finCompra.php"<button class="primary-btn text-right">Finalizar compra</button></a>
+                                    <?php
                                 }
-                                ?>
-                            </table>
-                            <?php if (!isset($finalizar)) { ?>
-                                <a href="BBDD/finCompra.php"<button class="primary-btn text-right">Finalizar compra</button></a>
-                                <?php
                             }
                         } else {
                             ?>
                             <div class="alert alert-warning" role="alert">
-                                    Tu carrito está vacío.
-                                </div>
+                                Tu carrito está vacío.
+                            </div>
                             <?php
                         }
                         ?>
