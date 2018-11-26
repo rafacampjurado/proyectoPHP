@@ -452,8 +452,8 @@ EX;
 
 function buscarApi($nombre) {
     $apiKey = "252cc403756b3da734c595016b67a914";
-//$fodd = "tomatoes";
-    $food = $nombre;
+    $comidaSTR = explode(" - ",$nombre);
+    $food = $comidaSTR[0];
     $url = "https://www.food2fork.com/api/search?key=$apiKey&q=$food&page=1";
     $response = file_get_contents($url);
     $resultado = json_decode($response, true);
