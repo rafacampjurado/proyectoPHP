@@ -13,9 +13,7 @@ $existeComent = exiteComentario($idUsuario, $idProd);
 $paginas = pintarPaginas($idProd);
 $objSerializado = serialize($producto);
 $errorOpinion = $_GET['error'];
-$comidaSTR = explode("-",$producto->nombre);
-$alimento = $comidaSTR[0];
-$recetas = buscarApi($alimento);
+$recetas = buscarApi($producto->nombre);
 ?>
 <!DOCTYPE html>
 <html lang="en">

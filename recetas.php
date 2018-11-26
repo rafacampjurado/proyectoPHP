@@ -3,12 +3,8 @@ include ('BBDD/funciones.php');
 require_once 'BBDD/objetoProducto.php';
 session_start();
 $comida = $_GET['comida'];
-$comidaSTR = explode("-",$comida);
-//print_r($comidaSTR);
-//echo $comidaSTR[0];
-$alimento = $comidaSTR[0];
-$recetas = buscarApi($alimento);
-//if (isset($_SESSION['usuario'])) {
+$recetas = buscarApi($comida);
+if (isset($_SESSION['usuario'])) {
     
     ?>
     <html lang="en">
@@ -99,7 +95,7 @@ $recetas = buscarApi($alimento);
 
     </html>
     <?php
-//} else {
-//    header("location: ../index.php");
-//}
+} else {
+    header("location: ../index.php");
+}
     
