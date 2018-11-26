@@ -22,5 +22,8 @@ if (isset($_SESSION['carrito'])) {
         unset($_SESSION['carrito']);
     }
 //    header("Location: ../verCarrito.php?fin=fin");
+    header("Location: ../verCarrito.php?fin=fin");
+} else {
+    header("Location: ../verCarrito.php?error=error");
 }
-header("Location: ../verCarrito.php?fin=fin");
+
